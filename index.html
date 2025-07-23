@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Hafidz - Aplikasi Manajemen Hafalan Al-Qur'an</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Menggunakan font Inter sebagai default */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111; /* Latar belakang hitam pekat */
+            color: #E5E7EB; /* Warna teks default abu-abu terang */
+        }
+        
+        /* Kustomisasi warna Emas & Hitam */
+        .bg-primary-gradient { 
+            background: linear-gradient(90deg, #1a1a1a 0%, #000000 100%);
+        }
+        .bg-secondary { background-color: #1F1F1F; } /* Abu-abu gelap */
+        .text-gold { color: #D4AF37; } /* Warna emas utama */
+        .text-light-gold { color: #F0E68C; } /* Emas lebih terang untuk hover */
+
+        .btn-gold {
+            background: linear-gradient(90deg, #FFD700 0%, #D4AF37 100%);
+            color: #111111; /* Teks hitam */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: #D4AF37; /* Judul seksi warna emas */
+        }
+
+        .feature-card {
+            background-color: #1F1F1F; /* Abu-abu gelap */
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: #D4AF37;
+        }
+        .feature-card .icon-bg {
+            background: linear-gradient(145deg, #D4AF37, #B8860B);
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigasi -->
+    <header class="bg-primary-gradient text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- HEADER DIPERBARUI DENGAN TEKS -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="https://i.postimg.cc/0QbJBZz5/IMG-20250719-WA0026-1.png" alt="Logo Al Hafidz" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/50x50/1a1a1a/D4AF37?text=A';">
+                <span class="text-gold font-bold text-2xl">Al Hafizh</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#fitur" class="hover:text-gold transition">Fitur</a>
+                <a href="#kolaborasi" class="hover:text-gold transition">Kolaborasi</a>
+                <a href="#kontak" class="hover:text-gold transition">Kontak</a>
+            </div>
+            <a href="#" class="hidden md:block btn-gold font-bold py-2 px-6 rounded-lg">
+                Coba Gratis
+            </a>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#fitur" class="block py-2 hover:text-gold">Fitur</a>
+            <a href="#kolaborasi" class="block py-2 hover:text-gold">Kolaborasi</a>
+            <a href="#kontak" class="block py-2 hover:text-gold">Kontak</a>
+            <a href="#" class="mt-4 block text-center btn-gold font-bold py-2 px-6 rounded-lg">
+                Coba Gratis
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Kelola dan Pantau Hafalan Al-Qur'an <br class="hidden md:block"> Menjadi <span class="text-gold">Lebih Mudah</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                    Aplikasi Al Hafidz membantu para guru untuk memanajemen progres hafalan santri/siswa secara efisien, terstruktur, dan modern.
+                </p>
+                <div class="mt-10 flex justify-center items-center gap-4">
+                    <a href="#" class="btn-gold font-bold py-3 px-8 rounded-lg text-lg">Mulai Sekarang</a>
+                    <a href="#fitur" class="font-semibold py-3 px-8 rounded-lg text-lg text-gold">Lihat Fitur <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="mt-16 shadow-2xl rounded-2xl overflow-hidden ring-1 ring-gold ring-opacity-20">
+                    <img src="https://i.postimg.cc/sg0y9wvf/IMG-20250723-114951.jpg" 
+                         alt="Dashboard Aplikasi Al Hafidz" 
+                         class="w-full h-auto"
+                         onerror="this.onerror=null;this.src='https://placehold.co/1200x675/1F1F1F/D4AF37?text=Gagal+memuat+gambar...';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Fitur Section -->
+        <section id="fitur" class="py-20 bg-secondary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl section-title">Fitur Unggulan Al Hafidz</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Semua yang Anda butuhkan untuk mengelola hafalan dalam satu aplikasi.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Fitur 1: Data Hafalan -->
+                    <div class="feature-card text-center">
+                        <div class="mb-4 inline-block p-4 icon-bg rounded-full text-2xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Data Hafalan Santri</h3>
+                        <p class="text-gray-400">Kelola data santri/siswa dan rekam jejak hafalan mereka dengan rapi dan mudah diakses.</p>
+                    </div>
+                    <!-- Fitur 2: Pantau Progres -->
+                    <div class="feature-card text-center">
+                        <div class="mb-4 inline-block p-4 icon-bg rounded-full text-2xl">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Pantau Progres Hafalan</h3>
+                        <p class="text-gray-400">Visualisasikan progres hafalan per santri atau per kelas melalui grafik yang informatif.</p>
+                    </div>
+                    <!-- Fitur 3: Catat Kekurangan -->
+                    <div class="feature-card text-center">
+                        <div class="mb-4 inline-block p-4 icon-bg rounded-full text-2xl">
+                            <i class="fas fa-pen-to-square"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Catat Kekurangan Bacaan</h3>
+                        <p class="text-gray-400">Berikan catatan dan koreksi spesifik pada setiap setoran hafalan untuk perbaikan yang terarah.</p>
+                    </div>
+                    <!-- Fitur 4: Murottal per Ayat -->
+                    <div class="feature-card text-center">
+                        <div class="mb-4 inline-block p-4 icon-bg rounded-full text-2xl">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Murottal untuk Talaqqi</h3>
+                        <p class="text-gray-400">Fasilitasi proses talaqqi dengan fitur murottal per ayat yang bisa didengarkan berulang kali.</p>
+                    </div>
+                    <!-- Fitur 5: Tes Acak -->
+                    <div class="feature-card text-center">
+                        <div class="mb-4 inline-block p-4 icon-bg rounded-full text-2xl">
+                            <i class="fas fa-shuffle"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Tes Hafalan Acak</h3>
+                        <p class="text-gray-400">Uji kekuatan hafalan santri dengan soal lanjutan ayat yang dibuat secara acak oleh sistem.</p>
+                    </div>
+                    <!-- Fitur 6: Cocok Untuk Semua -->
+                     <div class="feature-card text-center">
+                        <div class="mb-4 inline-block p-4 icon-bg rounded-full text-2xl">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Untuk Semua Pendidik</h3>
+                        <p class="text-gray-400">Ideal untuk guru sekolah, madin, pondok pesantren, hingga guru TPQ di seluruh Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl section-title">Visualisasi Data yang Jelas</h2>
+                        <p class="mt-4 text-lg text-gray-400">Dengan tampilan yang bersih dan modern, Anda dapat dengan mudah melihat progres kelas, status hafalan per santri, dan detail lainnya dalam sekejap.</p>
+                        <ul class="mt-6 space-y-3 text-gray-300">
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-gold mt-1 mr-3"></i><span>Laporan progres per kelas dan individu.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-gold mt-1 mr-3"></i><span>Manajemen kelas dan data santri yang fleksibel.</span></li>
+                            <li class="flex items-start"><i class="fa-solid fa-circle-check text-gold mt-1 mr-3"></i><span>Impor dan ekspor data santri dengan mudah.</span></li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="shadow-2xl rounded-2xl overflow-hidden ring-1 ring-gold ring-opacity-20">
+                            <img src="https://i.postimg.cc/cJgWDwnR/IMG-20250723-114918.jpg" 
+                                 alt="Progres Hafalan Santri" 
+                                 class="w-full h-auto"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/1000x750/1F1F1F/D4AF37?text=Gagal+memuat+gambar...';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kolaborasi Section -->
+        <section id="kolaborasi" class="py-20 bg-secondary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl section-title">Dikembangkan Bersama Para Ahli</h2>
+                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Al Hafidz adalah hasil kolaborasi antara praktisi teknologi dan ahli di bidang pendidikan Al-Qur'an untuk memastikan aplikasi ini relevan dan solutif.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Kolaborator 1 -->
+                    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center border border-gray-700">
+                        <img src="https://i.postimg.cc/vTGpdVcS/FB-IMG-1753246418453.jpg" alt="Gus Arif Balya" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gold object-cover">
+                        <h3 class="text-xl font-bold text-white">Gus Arif Balya</h3>
+                        <p class="text-gold font-semibold">Owner santridigital.net</p>
+                        <p class="mt-2 text-sm text-gray-500">Alumni Ponpes Lirboyo Jawa Timur & Founder duniakreator.com</p>
+                    </div>
+                    <!-- Kolaborator 2 -->
+                    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center border border-gray-700">
+                        <img src="https://i.postimg.cc/gkkfS39x/IMG-20250722-WA0048.jpg" alt="Ustadz M. Al Imron" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gold object-cover">
+                        <h3 class="text-xl font-bold text-white">Ustadz M. Al Imron, M.Pd</h3>
+                        <p class="text-gold font-semibold">Kepala Sekolah SDN Pagowan 2</p>
+                        <p class="mt-2 text-sm text-gray-500">Sekretaris Ikatan Alumni PP. Salafiyah Syafi'iyah Sukorejo Situbondo Kab. Lumajang</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold section-title">Siap Mengubah Cara Anda Mengajar?</h2>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Bergabunglah dengan ratusan guru lainnya dan rasakan kemudahan mengelola hafalan Al-Qur'an.</p>
+                <a href="#" class="mt-8 inline-block btn-gold font-bold py-4 px-10 rounded-lg text-xl">
+                    Daftar & Coba Gratis Sekarang
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-primary-gradient text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- About -->
+                <div class="md:col-span-1">
+                    <!-- FOOTER DIPERBARUI DENGAN TEKS -->
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <img src="https://i.postimg.cc/0QbJBZz5/IMG-20250719-WA0026-1.png" alt="Logo Al Hafidz" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/50x50/1a1a1a/D4AF37?text=A';">
+                        <span class="text-gold font-bold text-2xl">Al Hafizh</span>
+                    </a>
+                    <p class="text-gray-400">Aplikasi modern untuk manajemen dan monitoring hafalan Al-Qur'an bagi para pendidik.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h5 class="font-bold tracking-wider uppercase mb-4 text-gray-300">Tautan</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#fitur" class="hover:text-gold transition">Fitur</a></li>
+                        <li><a href="#kolaborasi" class="hover:text-gold transition">Kolaborasi</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media -->
+                <div>
+                    <h5 class="font-bold tracking-wider uppercase mb-4 text-gray-300">Hubungi Kami</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl text-gray-400 hover:text-gold transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-gold transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-2xl text-gray-400 hover:text-gold transition"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                &copy; 2024 Al Hafidz. All Rights Reserved. Dibuat dengan ❤️ oleh Santri Digital.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script untuk menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
